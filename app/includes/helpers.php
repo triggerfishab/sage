@@ -239,7 +239,7 @@ function pr_log($var, $label = '')
         $value = print_r($var, true);
     }
 
-    if (getenv('WP_ENV') !== 'production') {
+    if (env('WP_ENV') !== 'production') {
         error_log(
             sprintf('%s%s', $label ? $label . ' ' : '', $value),
             3,
