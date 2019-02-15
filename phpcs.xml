@@ -57,6 +57,7 @@
   <!-- Allow long lines -->
   <rule ref="Generic.Files.LineLength.TooLong">
     <exclude-pattern>resources/views</exclude-pattern>
+    <exclude-pattern>app/includes/acf-field-groups</exclude-pattern>
   </rule>
 
   <!-- Ignore indentation rules -->
