@@ -3,7 +3,7 @@
 namespace App;
 
 define('FONTELLO_CONFIG_PATH', 'config/fontello-config.json');
-define('JQUERY_VERSION', '3.3.1');
+define('JQUERY_VERSION', '3.4.1');
 
 add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('wp-embed');
