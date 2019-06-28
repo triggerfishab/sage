@@ -489,3 +489,6 @@ add_filter('upload_mimes', function ($mimes) {
 add_filter('show_admin_bar', function ($show) {
     return (current_user_can('read')) ? $show : false;
 });
+
+// Disable Gutenberg
+add_filter('use_block_editor_for_post', '__return_false');
