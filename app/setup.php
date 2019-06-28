@@ -130,3 +130,6 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+// Remove Windows Live Writer helper manifest
+remove_action( 'wp_head', 'wlwmanifest_link' );
