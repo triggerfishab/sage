@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'compiled' => wp_upload_dir()['basedir'].'/cache',
+    'compiled' => get_theme_file_path().'/cache',
 
 
     /*
