@@ -49,7 +49,7 @@ if (! post_password_required()) {
             continue;
         }
 
-        $component_path = sprintf( 'components.%1$s.%1$s', str_replace( '_', '-', get_row_layout() ) );
+        $component_path = sprintf( 'page-components.%1$s.%1$s', str_replace( '_', '-', get_row_layout() ) );
 
         echo App\template( $component_path, $data );
     }
