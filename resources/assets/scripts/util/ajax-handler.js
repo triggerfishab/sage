@@ -1,6 +1,3 @@
-import fetch from 'unfetch';
-import 'promise-polyfill/src/polyfill';
-
 export default class AjaxHandler {
   static async request(payload, method = 'POST', options = {}) {
     try {
