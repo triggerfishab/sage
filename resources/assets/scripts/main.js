@@ -1,3 +1,5 @@
+import 'mdn-polyfills/NodeList.prototype.forEach';
+
 // Import local dependencies
 import partials from './partials/*';
 
@@ -31,8 +33,6 @@ ready(() => {
       elements.forEach(el => {
         const instance = new partials[i].default();
         instance.element = el;
-
-        // element.dataset.instance = instance;
 
         partials[i].default.instances.push(instance);
 
