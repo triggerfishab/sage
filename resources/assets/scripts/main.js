@@ -47,6 +47,4 @@ ready(() => {
       instance.init();
     }
   }
-
-  document.body.classList.add('is-loaded');
 });

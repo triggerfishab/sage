@@ -60,17 +60,6 @@ add_action('wp_head', __NAMESPACE__ . '\\add_favicons');
  */
 add_filter('img_caption_shortcode_width', '__return_zero');
 
-add_action('wp_head', function () {
-    ?>
-    <style>
-        body {
-            opacity: 0;
-            background-color: #fff;
-        }
-    </style>
-    <?php
-});
-
 /**
  * Remove unnecessary meta boxes.
  */
