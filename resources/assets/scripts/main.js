@@ -22,7 +22,7 @@ ready(() => {
     if (typeof partials[i].selector === 'string') {
       elements = document.querySelectorAll(partials[i].selector);
 
-      if (!elements.length) {
+      if (! elements.length) {
         continue;
       }
     }
