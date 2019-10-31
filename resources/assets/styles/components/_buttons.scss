@@ -1,4 +1,4 @@
-.btn {
+%btn {
   display: inline-block;
 
   &.btn-loading {
@@ -29,4 +29,8 @@
       animation: rotate 0.5s infinite linear;
     }
   }
+}
+
+.btn {
+  @extend %btn;
 }
