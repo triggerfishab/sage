@@ -8,6 +8,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('wp-embed');
 });
 
+add_action('wp_print_styles', function () {
+    wp_dequeue_style('wp-block-library');
+});
+
 /**
  * Disable comments for posts and pages.
  */
