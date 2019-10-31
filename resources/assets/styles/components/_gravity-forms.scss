@@ -1,0 +1,82 @@
+.gform_heading {
+  margin-bottom: $spacer;
+}
+
+.gform_fields {
+  ul,
+  .entry-content & {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .gfield-type-radio,
+  .gfield-type-checkbox {
+    li {
+      margin-bottom: $spacer / 4;
+    }
+  }
+}
+
+.gfield_label {
+  margin-bottom: $spacer / 4;
+
+  .gfield-has-placeholder & {
+    display: none;
+  }
+}
+
+.gfield_description {
+  font-size: 0.8rem;
+  margin-top: $spacer / 4;
+}
+
+.validation_error {
+  margin-bottom: $spacer;
+}
+
+.gform_ajax_spinner {
+  display: none;
+}
+
+.gform_drop_area {
+  text-align: center;
+  padding: $spacer * 1.5;
+  border: 2px dashed #ccc;
+}
+
+.gfield-type-list {
+  tr:not(:last-child) td {
+    padding-bottom: $spacer;
+  }
+}
+
+.gfield-type-time {
+  .clear-multi {
+    display: flex;
+
+    .ginput_container_time {
+      width: 100%;
+      margin: 0 $spacer / 2;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      label {
+        font-size: 0.8rem;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      display: block;
+
+      .ginput_container_time {
+        margin: 0 0 $spacer - 10 0;
+      }
+    }
+  }
+}
