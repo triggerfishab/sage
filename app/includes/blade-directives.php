@@ -17,6 +17,10 @@ EOD;
         return '<?php the_content(); ?>';
     });
 
+    sage('blade')->compiler()->directive('theTitle', function () {
+        return '<?php the_title(); ?>';
+    });
+
     sage('blade')->compiler()->directive('pageComponents', function () {
         return <<<'EOD'
 <?php
