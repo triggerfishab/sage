@@ -12,14 +12,6 @@
   &:focus {
     border-color: rgba($dark, 0.2);
   }
-
-  &::placeholder {
-    //
-  }
-
-  .gfield_error & {
-    //
-  }
 }
 
 select {
