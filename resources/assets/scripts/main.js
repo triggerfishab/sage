@@ -1,18 +1,50 @@
-// import external dependencies
-import 'jquery';
+import 'mdn-polyfills/NodeList.prototype.forEach';
 
-// Import everything from autoload
-import './autoload/**/*'
+// Import local dependencies
+import partials from './partials/*';
 
-// import local dependencies
-import Router from './util/Router';
-import common from './routes/common';
+const ready = fn => document.readyState !== 'loading'
+  ? window.setTimeout(fn, 0)
+  : document.addEventListener('DOMContentLoaded', fn);
 
-/** Populate Router instance with DOM routes */
-const routes = new Router({
-  // All pages
-  common,
+ready(() => {
+  for (let i = partials.length - 1; 0 <= i; i--) {
+    if (typeof partials[i].default === 'undefined') {
+      continue;
+    }
+
+    if (typeof partials[i].default.prototype.init !== 'function') {
+      continue;
+    }
+
+    let elements;
+
+    if (typeof partials[i].selector === 'string') {
+      elements = document.querySelectorAll(partials[i].selector);
+
+      if (! elements.length) {
+        continue;
+      }
+    }
+
+    partials[i].default.instances = partials[i].default.instances || [];
+
+    if (elements) {
+      elements.forEach(el => {
+        const instance = new partials[i].default();
+        instance.element = el;
+
+        partials[i].default.instances.push(instance);
+
+        instance.init();
+      });
+    } else {
+      const instance = new partials[i].default();
+
+      partials[i].default.instances.push(instance);
+      partials[i].default.instance = instance;
+
+      instance.init();
+    }
+  }
 });
-
-// Load Events
-jQuery(document).ready(() => routes.loadEvents());

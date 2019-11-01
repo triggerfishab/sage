@@ -1,14 +1,8 @@
-export const selector = '.demo-component';
+export const selector = '.app-data';
 
 export default class {
 
   init() {
-    this.bindUIActions();
-
-    console.log(this.element, this.instances);
-  }
-
-  bindUIActions() {
-
+    console.log(this.element);
   }
 }

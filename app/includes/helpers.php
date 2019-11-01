@@ -3,36 +3,14 @@
 namespace App;
 
 define('FONTELLO_CONFIG_PATH', 'config/fontello-config.json');
-define('JQUERY_VERSION', '3.4.1');
 
 add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('wp-embed');
-
-    wp_deregister_script('jquery');
-    wp_register_script(
-        'jquery',
-        '//ajax.googleapis.com/ajax/libs/jquery/' . JQUERY_VERSION . '/jquery.min.js',
-        [],
-        null,
-        true
-    );
 });
 
-add_filter('script_loader_tag', function ($tag, $handle) {
-    if ($handle !== 'jquery') {
-        return $tag;
-    }
-
-    $jquery_version = JQUERY_VERSION;
-
-    $fallback_jquery_script = <<<EOT
-<script>
-window.jQuery || document.write('<script src="//code.jquery.com/jquery-$jquery_version.min.js"><\/script>');
-</script>\n
-EOT;
-
-    return $tag . $fallback_jquery_script;
-}, 10, 2);
+add_action('wp_print_styles', function () {
+    wp_dequeue_style('wp-block-library');
+});
 
 /**
  * Disable comments for posts and pages.
@@ -85,17 +63,6 @@ add_action('wp_head', __NAMESPACE__ . '\\add_favicons');
  * Remove inline width set on WP captions.
  */
 add_filter('img_caption_shortcode_width', '__return_zero');
-
-add_action('wp_head', function () {
-    ?>
-    <style>
-        body {
-            opacity: 0;
-            background-color: #fff;
-        }
-    </style>
-    <?php
-});
 
 /**
  * Remove unnecessary meta boxes.

@@ -1,7 +1,15 @@
 /**
+ * Color variables
+ */
+$white: #fff;
+$black: #000;
+
+$link-color: #369;
+$text-color: #222;
+
+/**
  * Bootstrap variables
  */
-
 $grid-gutter-width: 30px;
 
 $grid-breakpoints: (
@@ -44,13 +52,3 @@ $all-text-inputs:
   "textarea";
 
 $element-margin: 20px;
-
-/**
- * Color variables
- */
-
-$white: #fff;
-$black: #000;
-
-$link-color: #369;
-$text-color: #222;

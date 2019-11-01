@@ -17,6 +17,10 @@ EOD;
         return '<?php the_content(); ?>';
     });
 
+    sage('blade')->compiler()->directive('theTitle', function () {
+        return '<?php the_title(); ?>';
+    });
+
     sage('blade')->compiler()->directive('pageComponents', function () {
         return <<<'EOD'
 <?php
@@ -45,7 +49,7 @@ if (! post_password_required()) {
             continue;
         }
 
-        $component_path = sprintf( 'components.%1$s.%1$s', str_replace( '_', '-', get_row_layout() ) );
+        $component_path = sprintf( 'page-components.%1$s.%1$s', str_replace( '_', '-', get_row_layout() ) );
 
         echo App\template( $component_path, $data );
     }
