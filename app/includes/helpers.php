@@ -318,6 +318,11 @@ add_filter('the_generator', '__return_empty_string');
 remove_action('wp_head', 'wp_shortlink_wp_head');
 
 /**
+ * Disable XML-RPC RSD link from WordPress Header
+ */
+remove_action('wp_head', 'rsd_link');
+
+/**
  * Filter function to alter the length of excerpts
  */
 add_filter('excerpt_length', function ($length) {
