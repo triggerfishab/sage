@@ -10,8 +10,8 @@ add_filter('login_headerurl', function () {
     return home_url('/');
 });
 
-// add_filter('the_password_form', function ($form = '') {
-//     $label = 'pwbox-' . get_the_ID() ?: mt_rand();
+add_filter('the_password_form', function ($form = '') {
+    $label = 'pwbox-' . get_the_ID() ?: mt_rand();
 
-//     return template('partials/password-form', ['label' => $label]);
-// });
+    return template('partials/password-form', ['label' => $label]);
+});
