@@ -28,10 +28,16 @@ add_filter('gform_add_field_buttons', function ($groups) {
 add_filter('gform_pre_render', function ($form) {
     foreach ($form['fields'] as $field) {
         $field->cssClass .= ' gfield-type-' . $field->type;
+
         if (! empty($field->placeholder)) {
             $field->cssClass .= ' gfield-has-placeholder';
         }
+
+        if ($field->type === 'honeypot') {
+            $field->cssClass .= ' d-none';
+        }
     }
+
     return $form;
 });
 /**
