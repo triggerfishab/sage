@@ -313,6 +313,11 @@ add_filter('sanitize_file_name', function ($filename) {
 add_filter('the_generator', '__return_empty_string');
 
 /**
+ * Remove shortlink
+ */
+remove_action('wp_head', 'wp_shortlink_wp_head');
+
+/**
  * Filter function to alter the length of excerpts
  */
 add_filter('excerpt_length', function ($length) {
