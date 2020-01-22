@@ -112,7 +112,7 @@ function get_fontello_classes($for_select = false)
         return $classes;
     }
 
-    $config_path = sprintf('%s/%s', get_stylesheet_directory(), FONTELLO_CONFIG_PATH);
+    $config_path = sprintf('%s/%s', get_stylesheet_directory() . '/assets', FONTELLO_CONFIG_PATH);
 
     if (! file_exists($config_path)) {
         return $classes;
