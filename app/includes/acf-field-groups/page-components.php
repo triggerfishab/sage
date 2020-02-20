@@ -15,7 +15,7 @@ $handle = opendir(__DIR__ . '/page-components/');
 
 if ($handle) {
     while (false !== ($file_name = readdir($handle))) {
-        if ('.' === $file_name || '..' === $file_name) {
+        if ('.' === $file_name || '..' === $file_name || '.gitkeep' === $file_name) {
             continue;
         }
 
