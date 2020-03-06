@@ -31,6 +31,19 @@ add_filter('acf/load_field/name=color', function ($field = []) {
     return $field;
 });
 
+/**
+ * Filter for component admin title
+ */
+add_filter('acf/fields/flexible_content/layout_title/name=page_components', function ($title, $field, $layout, $i) {
+    $admin_text = get_sub_field('component_name');
+
+    if ($admin_text) {
+        $title = $layout['label'] . ' - ' . $admin_text;
+    }
+
+    return $title;
+}, 10, 4);
+
 add_action('acf/init', function () {
     if (function_exists('acf_add_options_page')) {
         acf_add_options_page([
