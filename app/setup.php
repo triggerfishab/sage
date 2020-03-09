@@ -6,6 +6,7 @@ use Roots\Sage\Container;
 use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
+use App\ReactComponents\ReactScripts;
 
 /**
  * Theme assets
@@ -25,6 +26,10 @@ add_action('wp_enqueue_scripts', function () {
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
+    }
+
+    if (ReactScripts::pageHasReactComponents()) {
+        ReactScripts::enqueueAssets('react-components');
     }
 }, 100);
 
