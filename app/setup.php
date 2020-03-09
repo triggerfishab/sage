@@ -146,4 +146,4 @@ add_action('after_setup_theme', function () {
 });
 
 // Remove Windows Live Writer helper manifest
-remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action('wp_head', 'wlwmanifest_link');
