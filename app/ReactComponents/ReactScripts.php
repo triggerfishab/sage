@@ -10,8 +10,9 @@ class ReactScripts
     public static function pageHasReactComponents()
     {
         $page_components = get_field_object('page_components', get_the_ID());
-
-        return !empty(array_column($page_components['layouts'], 'include_react'));
+        if ($page_components && $page_components['layouts']) {
+            return !empty(array_column($page_components['layouts'], 'include_react'));
+        }
     }
 
     /**
