@@ -91,3 +91,12 @@ add_filter('acf/fields/google_map/api', function ($api) {
 });
 
 add_filter('sober/controller/acf/array', '__return_true');
+
+
+/**
+ * Filter to enable translation of options
+ */
+if (function_exists('pll_default_language')) {
+    add_filter('acf/settings/default_language', fn($language) => pll_default_language());
+    add_filter('acf/settings/current_language', fn($language) => pll_current_language());
+}
